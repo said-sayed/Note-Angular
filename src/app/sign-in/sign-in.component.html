@@ -1,0 +1,31 @@
+<section id="signIn" class="bg-dark">
+  <form [formGroup]="signIn" (ngSubmit)="signIn.valid&&formData()">
+    <div class="form w-50 m-auto">
+      <div class="container">
+        <input [class.is-valid]="signIn.get('email')?.status=='VALID'" formControlName="email" type="email"
+          placeholder="Entar your mail" class="form-control">
+        <div *ngIf="signIn.get('email')?.errors != null&&signIn.get('email')?.touched==true" class=" text-danger ">
+          <p *ngIf="signIn.get('email')?.errors?.required">email is required</p>
+        </div>
+        <input [class.is-valid]="signIn.get('password')?.status=='VALID'" formControlName="password" type="password"
+          placeholder="Entar  Password" class="form-control mt-3">
+        <div *ngIf="signIn.get('password')?.errors != null&&signIn.get('password')?.touched==true"
+          class=" text-danger m-0">
+          <p class="m-0" *ngIf="signIn.get('password')?.errors?.required">password is required</p>
+        </div>
+        <button class="btn btn-info text-white w-100 mt-3 border-0"><span *ngIf="!isClick">Log In</span> <span
+            *ngIf="isClick">Wating ...</span></button>
+
+        <div *ngIf="isResponse == 'success'"  class="alert alert-success text-center">
+          {{isResponse}}
+        </div>
+        <div *ngIf="isResponse == 'email doesn\'t exist'" class="alert alert-danger text-center">
+          {{isResponse}}
+        </div>
+        <div *ngIf="isResponse == 'incorrect password'" class="alert alert-danger text-center">
+          {{isResponse}}
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

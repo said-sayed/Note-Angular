@@ -1,0 +1,15 @@
+#profile{
+  min-height: 100vh;
+  background-color: #666;
+}
+.diaries{
+  min-height: 200px;
+  max-width: 250px;
+  padding:10px;
+  background-color: #cfc;
+  box-shadow: 5px 5px 7px rgb(33 33 33 / 80%);
+}
+
+i,a{
+  cursor: pointer;
+}

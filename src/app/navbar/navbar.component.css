@@ -1,0 +1,26 @@
+button {
+  border: solid 2px;
+  padding-right: 50px;
+  padding-top: 10px;
+  color: #aaa;
+
+}
+nav a{
+  color: #ccc !important;
+
+}
+.dropdown-menu{
+  position: absolute;
+  background-color: #777;
+}
+.dropdown-item:hover{
+  background-color: #777;
+  color: #FFF !important;
+}
+
+.dropdown-toggle::after{
+  content: "<i class="fas fa-sign-in-alt"></i>";
+  border: 0 !important;
+}
+
+

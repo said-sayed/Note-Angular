@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container px-5 py-2">
+    <a class="navbar-brand text-white" href="#">
+      <i class="far fa-sticky-note"></i>
+      Diaries
+    </a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon d-flex">menu
+        <i class="ml-1 fas fa-bars" ></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="!_AuthService.isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login <i class="fas fa-sign-in-alt "></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/signup">Sign Up</a>
+            <a class="dropdown-item" routerLink="/signin">Sign In</a>
+          </div>
+        </li>
+        <li *ngIf="_AuthService.isLoggedIn()" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{_AuthService.getName()}}<i class="fas fa-user ml-2"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" style="cursor: pointer;" (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
